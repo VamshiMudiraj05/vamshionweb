@@ -100,7 +100,7 @@ export const experienceData = [
     company: "Isthara Parks Private Limited",
     location: "Hyderabad, India",
     role: "Trainee Software Engineer Intern",
-    period: "Recent / 2025 - 2026",
+    period: "Recent / May - Oct",
     description:
       "Contributed to enterprise hospitality and co-living SaaS platforms. Developed scalable REST APIs, optimized SQL queries, built intuitive user interfaces, and participated in Agile sprints.",
     responsibilities: [
@@ -133,7 +133,7 @@ export const experienceData = [
     company: "Malla Reddy University",
     location: "Hyderabad, India",
     role: "B.Tech CSE (Data Science) — CGPA 8.85",
-    period: "2021 — 2025",
+    period: "2022 — 2026",
     description:
       "Graduated with distinction in Computer Science & Engineering with specialization in Data Science. Strong academic and practical foundation in Data Structures, OOP, DBMS, Machine Learning, and Software Engineering.",
     responsibilities: [
