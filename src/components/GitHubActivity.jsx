@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GitCommit, ExternalLink } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
@@ -7,6 +7,7 @@ export default function GitHubActivity({ theme }) {
   const [total, setTotal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -49,6 +50,20 @@ export default function GitHubActivity({ theme }) {
       isMounted = false;
     };
   }, []);
+
+  // Auto-scroll to the end (most recent contributions) when data is ready
+  useEffect(() => {
+    if (!loading && scrollRef.current) {
+      const scrollToRight = () => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+        }
+      };
+      scrollToRight();
+      const timer = setTimeout(scrollToRight, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loading, data]);
 
   const getColor = (level, isDark) => {
     if (isDark) {
@@ -127,22 +142,24 @@ export default function GitHubActivity({ theme }) {
         {loading ? (
           <div className="h-[120px] rounded-xl bg-black/[0.03] dark:bg-white/[0.03] animate-pulse" />
         ) : (
-          <div className="overflow-x-auto pb-2 -mx-2 px-2">
-            <div className="inline-flex gap-1 min-w-[700px]">
-              {weeks.map((week, wIndex) => (
-                <div key={wIndex} className="flex flex-col gap-1">
-                  {week.map((day) => (
-                    <div
-                      key={day.date}
-                      className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-xs transition-transform hover:scale-125 cursor-pointer"
-                      style={{
-                        backgroundColor: getColor(day.level, isDark),
-                      }}
-                      title={`${day.count} contributions on ${day.date}`}
-                    />
-                  ))}
-                </div>
-              ))}
+          <div>
+            <div ref={scrollRef} className="overflow-x-auto pb-2 -mx-2 px-2 scroll-smooth">
+              <div className="inline-flex gap-1 min-w-[700px]">
+                {weeks.map((week, wIndex) => (
+                  <div key={wIndex} className="flex flex-col gap-1">
+                    {week.map((day) => (
+                      <div
+                        key={day.date}
+                        className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-xs transition-transform hover:scale-125 cursor-pointer"
+                        style={{
+                          backgroundColor: getColor(day.level, isDark),
+                        }}
+                        title={`${day.count} contributions on ${day.date}`}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center justify-between mt-4 text-[11px] text-gray-400 dark:text-white/40">
