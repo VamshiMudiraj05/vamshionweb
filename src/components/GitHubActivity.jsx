@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { GitCommit, ExternalLink } from "lucide-react";
+import { GitCommit, ExternalLink, Flame } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
 export default function GitHubActivity({ theme }) {
@@ -7,6 +7,8 @@ export default function GitHubActivity({ theme }) {
   const [total, setTotal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [streakLoaded, setStreakLoaded] = useState(false);
+  const [streakError, setStreakError] = useState(false);
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -97,6 +99,10 @@ export default function GitHubActivity({ theme }) {
 
   const isDark = theme === "dark";
 
+  const streakUrl = isDark
+    ? "https://streak-stats.demolab.com/?user=VamshiMudiraj05&theme=radical&hide_border=true&border_radius=12&background=141414"
+    : "https://streak-stats.demolab.com/?user=VamshiMudiraj05&theme=radical&hide_border=true&border_radius=12";
+
   // Group into weeks
   const weeks = [];
   if (data) {
@@ -177,6 +183,69 @@ export default function GitHubActivity({ theme }) {
             </div>
           </div>
         )}
+
+        {/* GitHub Streak Stats Section */}
+        <div className="mt-8 pt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col items-center">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full mb-4 gap-2">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-[#FE428E]/10 dark:bg-[#FE428E]/20 flex items-center justify-center text-[#FE428E]">
+                <Flame size={15} className="fill-[#FE428E]/40" />
+              </div>
+              <div>
+                <h4 className="font-instrument font-semibold text-lg text-gray-800 dark:text-white leading-tight">
+                  GitHub Streak Stats
+                </h4>
+                <p className="text-[11px] text-gray-500 dark:text-white/50">
+                  Daily commit streak & contribution milestones
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] font-mono text-[#c2185b] dark:text-[#f3b9c8] hover:underline self-start sm:self-auto"
+            >
+              <span>View Streak on GitHub</span>
+              <ExternalLink size={10} />
+            </a>
+          </div>
+
+          <div className="relative w-full flex justify-center">
+            {!streakLoaded && !streakError && (
+              <div className="w-full max-w-[495px] h-[195px] rounded-xl bg-black/[0.03] dark:bg-white/[0.04] animate-pulse flex flex-col items-center justify-center gap-2 border border-black/5 dark:border-white/10">
+                <Flame size={20} className="animate-bounce text-[#FE428E]" />
+                <span className="text-xs text-gray-400 dark:text-white/40">Loading streak data...</span>
+              </div>
+            )}
+
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              title="View Vamshi's GitHub Profile"
+              className={`group relative block w-full max-w-[495px] overflow-hidden rounded-xl border border-black/10 dark:border-white/10 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#FE428E]/50 hover:scale-[1.01] ${
+                streakLoaded ? "opacity-100" : "opacity-0 absolute pointer-events-none"
+              }`}
+            >
+              <img
+                src={streakUrl}
+                alt="Vamshi Mudiraj GitHub Streak Stats"
+                className="w-full h-auto object-contain block"
+                onLoad={() => setStreakLoaded(true)}
+                onError={() => setStreakError(true)}
+                loading="lazy"
+              />
+            </a>
+
+            {streakError && (
+              <div className="w-full max-w-[495px] p-6 rounded-xl bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 text-center text-xs text-rose-600 dark:text-rose-400">
+                <p>Live GitHub streak stats currently unavailable. Visit GitHub profile directly.</p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
