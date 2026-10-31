@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, Copy, Check, Send, MapPin, Sparkles, MessageSquare, ExternalLink } from "lucide-react";
+import { Mail, Copy, Check, Send, MapPin, Sparkles, ExternalLink } from "lucide-react";
 import { FaYoutube, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import confetti from "canvas-confetti";
 import { personalInfo } from "../data/portfolioData";
 
 export default function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle"); // 'idle' | 'sending' | 'sent'
 
@@ -21,18 +20,6 @@ export default function Contact() {
       colors: ["#F3B9C8", "#c2185b", "#ffffff", "#ffd1dc"],
     });
     setTimeout(() => setCopiedEmail(false), 2500);
-  };
-
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText(personalInfo.phone);
-    setCopiedPhone(true);
-    confetti({
-      particleCount: 40,
-      spread: 60,
-      origin: { y: 0.8 },
-      colors: ["#F3B9C8", "#c2185b", "#ffffff", "#ffd1dc"],
-    });
-    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   const handleSubmit = (e) => {
@@ -100,39 +87,6 @@ export default function Contact() {
                   <>
                     <Copy size={14} />
                     <span>Copy Email</span>
-                  </>
-                )}
-              </button>
-            </div>
-
-            {/* Mobile / Phone Card */}
-            <div className="dashed-border-anim rounded-2xl bg-white dark:bg-[#141414] p-5 sm:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-white/40 mb-2.5">
-                  <Phone size={14} />
-                  <span>Phone / WhatsApp</span>
-                </div>
-                <a
-                  href={`tel:${personalInfo.phone.replace(/\s+/g, "")}`}
-                  className="font-mono text-sm text-gray-800 dark:text-white font-medium mb-3.5 block hover:text-[#c2185b] dark:hover:text-[#f3b9c8] transition-colors"
-                >
-                  {personalInfo.phone}
-                </a>
-              </div>
-
-              <button
-                onClick={handleCopyPhone}
-                className="glare-button flex items-center justify-center gap-2 w-full py-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-xs font-medium text-gray-800 dark:text-white transition-colors cursor-pointer"
-              >
-                {copiedPhone ? (
-                  <>
-                    <Check size={14} className="text-green-500" />
-                    <span>Copied Number!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy size={14} />
-                    <span>Copy Number</span>
                   </>
                 )}
               </button>

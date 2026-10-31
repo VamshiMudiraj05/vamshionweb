@@ -8,7 +8,6 @@ export const personalInfo = {
   shortBio: "B.Tech CSE (Data Science) Graduate from Malla Reddy University (CGPA: 8.85) & Trainee Software Engineer.",
   location: "Hyderabad, Telangana, India",
   email: "vmudiraj230@gmail.com",
-  phone: "+91 8247593561",
   status: "Available for Full-Time & Freelance Roles",
   github: "https://github.com/VamshiMudiraj05",
   linkedin: "https://www.linkedin.com/in/vamshi05/",
