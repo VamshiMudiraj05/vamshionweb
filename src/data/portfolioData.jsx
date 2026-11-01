@@ -17,7 +17,7 @@ export const personalInfo = {
   memePage: "https://www.instagram.com/mruh_meme_project_/",
   resume: "/Vamshi_SD.pdf",
   resumeUrl: "/Vamshi_SD.pdf",
-  liveUrl: "https://vamshiportfolio-sigma.vercel.app/",
+  liveUrl: "https://vamshi.is-a.dev/",
 };
 
 export const rotatingRoles = [
