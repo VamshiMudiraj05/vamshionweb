@@ -21,6 +21,56 @@
     "createdAt": "2026-11-01T17:45:00+05:30"
   },
   {
+    "id": "zema-global-software-engineer-junior-0c894bf6",
+    "date": "2026-11-02",
+    "title": "Software Engineer (Junior Role)",
+    "company": "Zema Global",
+    "location": "India",
+    "applicationUrl": "https://jobs.deel.com/zema.global/job-details/0c894bf6-a6fe-46dc-baef-6856b53363d4/overview",
+    "note": "Eligibility: Bachelor's degree | Experience: Junior level",
+    "createdAt": "2026-11-02T18:30:00+05:30"
+  },
+  {
+    "id": "reliaquest-associate-software-engineer-r15032",
+    "date": "2026-11-02",
+    "title": "Associate Software Engineer",
+    "company": "ReliaQuest",
+    "location": "Pune, India",
+    "applicationUrl": "https://reliaquest.wd5.myworkdayjobs.com/ReliaQuest_Careers/job/Pune-India-Office/Associate-Software-Engineer_R15032",
+    "note": "Eligibility: Java, Spring Boot, and microservices architecture | Experience: 0–1 year",
+    "createdAt": "2026-11-02T18:25:00+05:30"
+  },
+  {
+    "id": "aititude-intern-1048",
+    "date": "2026-11-02",
+    "title": "Intern",
+    "company": "AITITUDE",
+    "location": "Hyderabad, India",
+    "applicationUrl": "https://work360.aititude.in/careers/tenants/1002/jobs/1048",
+    "note": "Eligibility: Internship opportunity | Experience: Internship",
+    "createdAt": "2026-11-02T18:20:00+05:30"
+  },
+  {
+    "id": "trinet-job-44396454",
+    "date": "2026-11-02",
+    "title": "Job Opening",
+    "company": "TriNet",
+    "location": "Not confirmed",
+    "applicationUrl": "https://jobs.trinet.com/careers/job/44396454?hl=en&domain=trinet.com",
+    "note": "Eligibility: Not confirmed | Experience: Not confirmed",
+    "createdAt": "2026-11-02T18:15:00+05:30"
+  },
+  {
+    "id": "job-application-google-form-20261102",
+    "date": "2026-11-02",
+    "title": "Job Application",
+    "company": "Not specified",
+    "location": "Not specified",
+    "applicationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe7ftjdZbTnRILZwNyrtjOfyRm_jHhgjxiYH9azVUK2sz4x7Q/viewform",
+    "note": "Eligibility: Not specified | Experience: Not specified",
+    "createdAt": "2026-11-02T18:10:00+05:30"
+  },
+  {
     "id": "spektra-ai-native-web-developer-trainee-20261101",
     "date": "2026-11-01",
     "title": "AI-Native Web Developer — Trainee",
@@ -91,4 +141,3 @@
     "createdAt": "2026-10-31T21:15:00+05:30"
   }
 ]
-
