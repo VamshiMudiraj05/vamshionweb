@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Home, FolderGit2, Sparkles, MessageSquare, Send } from "lucide-react";
+import { Home, FolderGit2, Sparkles, Briefcase, MessageSquare, Send } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { personalInfo } from "../data/portfolioData";
 
@@ -9,12 +9,14 @@ export default function Navbar({ currentView, onViewChange, theme, onToggleTheme
     { name: "Home", view: "home" },
     { name: "Projects", view: "projects" },
     { name: "Content", view: "content" },
+    { name: "Jobs", view: "jobs" },
   ];
 
   const mobileNavItems = [
     { name: "Home", view: "home", icon: Home },
     { name: "Projects", view: "projects", icon: FolderGit2 },
     { name: "Content", view: "content", icon: Sparkles },
+    { name: "Jobs", view: "jobs", icon: Briefcase },
     { name: "Talk", view: "contact", icon: MessageSquare },
   ];
 
@@ -96,7 +98,7 @@ export default function Navbar({ currentView, onViewChange, theme, onToggleTheme
       </nav>
 
       {/* Mobile Bottom Floating Dock Bar */}
-      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[336px] max-w-[92vw]">
+      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[360px] max-w-[94vw]">
         <div className="flex items-center justify-between bg-white/85 dark:bg-[#1a1a1a]/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.15)] border border-black/5 dark:border-white/10 rounded-[32px] p-1.5 w-full transition-colors duration-200">
           {mobileNavItems.map((item) => {
             const Icon = item.icon;
@@ -110,8 +112,8 @@ export default function Navbar({ currentView, onViewChange, theme, onToggleTheme
                 onClick={() => handleNavClick(item.view)}
                 className={`group relative flex items-center justify-center h-11 rounded-[24px] transition-colors duration-150 overflow-hidden cursor-pointer focus:outline-none ${
                   isActive
-                    ? "px-4 bg-black/10 dark:bg-white/15 gap-2"
-                    : "w-12 hover:bg-black/5 dark:hover:bg-white/5"
+                    ? "px-3 sm:px-3.5 bg-black/10 dark:bg-white/15 gap-1.5"
+                    : "w-10 sm:w-11 hover:bg-black/5 dark:hover:bg-white/5"
                 }`}
               >
                 <motion.div layout className="shrink-0 flex items-center justify-center">

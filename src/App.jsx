@@ -8,12 +8,26 @@ import GitHubActivity from "./components/GitHubActivity";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import ContentCreation from "./components/ContentCreation";
+import VamshiVerse from "./components/VamshiVerse";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const [currentView, setCurrentView] = useState("home");
+  const [currentView, setCurrentView] = useState(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const viewParam = params.get("view");
+      if (viewParam && ["home", "projects", "content", "jobs", "contact"].includes(viewParam)) {
+        return viewParam;
+      }
+      const hash = window.location.hash.replace("#", "");
+      if (hash && ["home", "projects", "content", "jobs", "contact"].includes(hash)) {
+        return hash;
+      }
+    }
+    return "home";
+  });
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("vamshi_theme");
     return saved === "dark" || saved === "light" ? saved : "light";
@@ -113,6 +127,19 @@ export default function App() {
                 className="w-full flex flex-col items-center"
               >
                 <ContentCreation onViewChange={handleViewChange} />
+              </motion.div>
+            )}
+
+            {(currentView === "jobs" || currentView === "vamshiverse") && (
+              <motion.div
+                key="jobs"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-full flex flex-col items-center"
+              >
+                <VamshiVerse onViewChange={handleViewChange} />
               </motion.div>
             )}
 
