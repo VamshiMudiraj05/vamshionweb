@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, MapPin, Building2, MessageSquareText } from "lucide-react";
+import { ExternalLink, MapPin, Building2, MessageSquareText, Calendar } from "lucide-react";
 import { isValidUrl } from "../utils/jobUtils";
 
 export default function JobCard({ job, index }) {
@@ -63,6 +63,20 @@ export default function JobCard({ job, index }) {
                 </span>
               )}
             </div>
+
+            {/* Optional Walk-in / Event Details */}
+            {job.driveDetails?.eventDate && (
+              <div className="mt-2 inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-mono font-medium text-[#c2185b] dark:text-[#f3b9c8] bg-[#fdf0f4] dark:bg-[#25181f] px-2.5 py-1 rounded-md border border-[#f3b9c8]/40 dark:border-[#c2185b]/30">
+                <Calendar size={12} className="shrink-0" />
+                <span>Drive Date: {job.driveDetails.eventDate}</span>
+                {job.driveDetails.time && (
+                  <>
+                    <span className="text-gray-400 dark:text-gray-600 select-none">•</span>
+                    <span>{job.driveDetails.time}</span>
+                  </>
+                )}
+              </div>
+            )}
 
             {/* Optional Note */}
             {job.note && job.note.trim() && (

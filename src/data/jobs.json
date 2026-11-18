@@ -1,26 +1,5 @@
 [
   {
-    "id": "mega-it-placement-drive-2026-walkin",
-    "date": "2026-11-01",
-    "title": "Mega IT Placement Drive 2026 — Walk-in Drive",
-    "company": "Syncpedia Technologies Pvt Ltd (co-sponsored by WalkinReady.cloud)",
-    "location": "Madhapur, Hyderabad, Telangana",
-    "applicationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe_NfozCTcJ-3pUAytnSG0zifBFm6mY1jl15IhaIIL904rngA/viewform?pli=1",
-    "note": "Are you ready for your next IT career opportunity? Meet recruiters from 20+ IT companies in one place! Candidates can attend interviews for relevant IT roles based on their qualifications, skills, and experience.",
-    "isPinned": true,
-    "pinnedUntil": "2026-11-21",
-    "badge": "WALK-IN DRIVE",
-    "driveDetails": {
-      "eventDate": "Saturday, 21 November 2026",
-      "time": "8:00 AM – 4:00 PM",
-      "venue": "4th Floor, Plot No. 852 & 853, Road No. 45, 100 Feet Road, beside Power Substation, Madhapur, Telangana 500081",
-      "contact": "+91 8297345666",
-      "website": "www.syncpedia.in",
-      "companies": "20+ IT Companies"
-    },
-    "createdAt": "2026-11-01T17:45:00+05:30"
-  },
-  {
     "id": "sphinxhire-full-stack-developer-fresher-2pymk",
     "date": "2026-11-18",
     "title": "Full Stack Developer (Fresher)",
@@ -99,6 +78,26 @@
     "applicationUrl": "https://www.revature.com/revature-junior-trainer-candidature-confirmation-form",
     "note": "Candidature confirmation form for Junior Technology Trainer role | Entry-level / Freshers",
     "createdAt": "2026-11-01T17:50:00+05:30"
+  },
+  {
+    "id": "mega-it-placement-drive-2026-walkin",
+    "date": "2026-11-01",
+    "title": "Mega IT Placement Drive 2026 — Walk-in Drive",
+    "company": "Syncpedia Technologies Pvt Ltd (co-sponsored by WalkinReady.cloud)",
+    "location": "Madhapur, Hyderabad, Telangana",
+    "applicationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe_NfozCTcJ-3pUAytnSG0zifBFm6mY1jl15IhaIIL904rngA/viewform?pli=1",
+    "note": "Are you ready for your next IT career opportunity? Meet recruiters from 20+ IT companies in one place! Candidates can attend interviews for relevant IT roles based on their qualifications, skills, and experience.",
+    "isPinned": false,
+    "badge": "WALK-IN DRIVE",
+    "driveDetails": {
+      "eventDate": "Saturday, 21 November 2026",
+      "time": "8:00 AM – 4:00 PM",
+      "venue": "4th Floor, Plot No. 852 & 853, Road No. 45, 100 Feet Road, beside Power Substation, Madhapur, Telangana 500081",
+      "contact": "+91 8297345666",
+      "website": "www.syncpedia.in",
+      "companies": "20+ IT Companies"
+    },
+    "createdAt": "2026-11-01T17:45:00+05:30"
   },
   {
     "id": "jio-sde-1-87405934",
